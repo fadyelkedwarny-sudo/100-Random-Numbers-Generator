@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f7f7f7;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2a9d8f;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    button {
+      padding: 12px 20px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      background-color: #2a9d8f;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #21867a;
+    }
+    .numbers {
+      margin-top: 20px;
+      text-align: left;
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px dashed #ccc;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>100 Random Numbers Generator</h1>
+    <button onclick="generateRandomNumbers()">Generate Numbers</button>
+    <div class="numbers" id="numbersOutput">Your numbers will appear here...</div>
+  </div>
+
+  <script>
+    function generateRandomNumbers() {
+      let numbers = [];
+      for (let i = 0; i < 100; i++) {
+        numbers.push(Math.floor(Math.random() * 1000) + 1); // Random number 1-1000
+      }
+      document.getElementById('numbersOutput').textContent = numbers.join(', ');
+    }
+  </script>
+</body>
+</html>
